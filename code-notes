@@ -1,0 +1,587 @@
+## # Welcome to the python-notes wiki!
+
+10.50.35.176   CTFd Base login: HAJE-M503      same pwd as computer
+
+
+DAY 1
+	Vim vimrc
+#!/usr/bin/python3
+print(“Hello World”)
+
+Chmod +x myscript.py
+
+Terminal
+$ python3
+>>>
+
+VARIABLES
+string=“This is a string”
+integer= 17 
+boolean= False
+float= 18.5
+list=[“my string”, 14, 13.2]
+tuple=(12, ‘sting me’, 78.4) 
+
+
+print(mystring) = shows just the variable
+type(mystring) = shows type of variable “string”
+
+Changing type of variable= str(a) or float(a) or int(a)
+(only if it makes sense)
+Int_value = str(34)
+
+Calling by index= mylist[0] or mylist[2] always starts with 0, 
+last item in list mylist[-1]
+Adding to list= mylist.append(variable made)
+Delete from list= del mylist[1] 
+Can’t change tuple’s = mytuple = (12, ‘sting me’, 78.4) 
+.replace(“@”, “.”)
+
+email.split(“.”)[0]
+‘Haley’
+.join(“.”)  exe. output = ".".join(sent_list)
+
+Lst = email.replace(“@”, “.”).split(“.”)
+
+.strip() removes the whitespace or any specified character from a string
+.format()
+>>> "your name is: {}".format(myname)
+'your name is: jessup'
+>>> "your name is: {} Your age is: {}".format(myname,age)
+'your name is: jessup Your age is: 32'
+>>> userinput=input("what is your name: ")
+what is your name: jessup
+
+~/Desktop/Python$ vim myscript.py
+#!/usr/bin/python3
+
+name = input("please enter name")
+
+print("hello {} Welcome to usmc".format(name))
+
+print("Hello {name} Welcome to usmc")
+
+
+
+
+Addition +, subtraction -, multiplication *, quotient /, integer quotient //, 
+modulus (the remainder 452 % 5) %, 
+
+~/Desktop/Python$ git clone https://git.cybbh.space/programming/python/public
+
+
+
+Script 
+!/usr/bin/python3
+
+email = input('Please Enter your email address here: ')
+
+print("Good Morning {}, Welcome to usmc.mil".format(email.split(".")[0]))
+
+Output
+Please Enter your email address here: haley.marie.jessup@gmail.com
+Good Morning haley, Welcome to usmc.mil
+
+
+SCRIPT
+#!/usr/bin/python3
+
+email = input('Please Enter your email address here: ')
+new = email.replace("@",".").split(".")
+
+firstname = new[0]
+domain = new[-2]
+com = new[-1]
+print("Good Morning {}, Welcome to {}.{} ".format(firstname,domain,com))
+
+OUTPUT
+Please Enter your email address here: haley.marie.jessup@gmail.com
+Good Morning haley, Welcome to gmail.com 
+
+
+
+
+
+
+
+DAY 2
+
+== equal to (returns True or False) 10==10
+!= not equal
+Both conditions on the sides of an and must be true in order to return True
+Only one condition in an OR statement has to be true to return as True
+<
+<=
+>
+>=
+IN (10 in mylist) returns true or false
+OR ( if num > 10 OR num == 5:)
+
+IF statements
+#!/usr/bin/python3
+
+userinput = int(input('please enter a number: '))
+
+if userinput > 10:
+    print("Number is larger than 10")
+elif userinput == 5:
+    print("number is 5")
+else:
+    print("number is not 5 and less than 10")
+    
+Inpt = int(input(‘please enter #’)
+If inpt % 10 == 0 OR input % 6 == 0:
+	print()
+Else:
+	print()
+Most specific to least specific
+To create negative ( if number>0 ) or (if number<0)
+
+
+
+While Loops
+
+a=0
+While a < 20:				( while <condition> is true proceed)
+	print(a)
+	A += 1
+
+while count <= 100:
+    print(f"the Count is: {count}")	(the f is shorthand for .format else its,
+    count += 1					“the count is {}”.format(count))
+
+For loops 
+
+Example 1
+mylist = [1,2,3,4,5]
+for x in mylist:					   (X and Animal are just    print(x*5)						    a representation for the items in
+
+Example 2							      The list)
+animalzoo = ["cat","fox","dog","lion","bird"]
+for animal in animalzoo:
+    print("{} walks around".format(animal))
+
+For loops iterate all the way through the list without needing to modify the total, or you can combine counting with it
+
+Example 3
+animalzoo = ["cat","fox","dog","lion","bird"]
+count = 0
+for animal in animalzoo:
+    print("{} walks around, this is {} in the list".format(animal,count))
+    count += 1
+
+
+
+Examle 4
+animalzoo = ["cat","fox","dog","lion","bird"]
+keepers = ["sue","mat","bill","nell","dale"]
+count = 0
+for animal in animalzoo:
+    print("{} walks around, escorted by {}".format(animal,keepers[count]))
+    count += 1
+
+(using count as the index to iterate through the second list aka keepers)
+ 
+Example 5
+animalzoo=[ all the animals]
+emptylist=[]
+
+For animal in animalzoo:
+emptylist.append(“this is a” + animal)
+	print(emptylist)
+
+(this creates a new list using the items from a previous list)
+………………………………………………………………………………..
+
+range(10)
+list(range(10))			utilizes range function to create list
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	
+Mylist[0:10:2]		[start:stop:step]	
+[0, 2, 4, 6, 8]
+
+Return list inverted         [::-1]
+
+function that returns an array of integers from n to 1 where n>0.
+
+def reverse_seq(n):
+    if n > 0:
+        lt = list(range(n,0,-1))
+        return lt
+    else:
+        pass
+
+Can create functions like
+
+Def myfunc(representing character):
+	While True:
+	Prompt for user input
+	If statements 
+	End with BREAK
+	Set function ( myfunc(55) )at the very bottom
+
+Example 1
+
+Def myfunc(n):
+	Myinput = []
+	While True:
+		Lines = input(‘enter string’)
+		If line == “”:
+			Return myinput
+		myinput.append(lines[::-1])
+
+(step 1: create function name, 2 create the N answer that it returns, 3 create a loop that gathers the information from user and stores it in a variable, 4 write an IF statement that filters the input, 5 add all the valid input to the initial created list that is returned to the function.)
+
+There is an automatic input at the end of the def function line, you use the (s) to add to another list or string that you create below it. For each letter in S ( the string you input) you have if statements. Also create a count below the list or string variable you create to iterate through the input( if count % 2 == 0: ). Under the if ( mystring += letter.upper() ) this adds the letter of the count your on to the other string youve made. Make sure to( count += 1 ). At the vey end ( return mystring ) the string variable you created.
+
+
+
+
+
+
+
+
+DAY 3 CODEWARS
+ 
+.join automatically turns a list into a string
+
+Create a function with two arguments that will return an array of the first N multiples of X. 
+def count_by(x, n):
+    print(x, n)
+    r = x * n
+    mylist = list(range(x, r+1, x))
+    return mylist
+count_by(1,10) #should return [1,2,3,4,5,6,7,8,9,10]
+count_by(2,5) #should return [2,4,6,8,10]
+
+
+READING AND WRITING TO A FILE
+Touch creates a file
+Cat reads the file
+“W” = write “R” = read “a” = append
+
+tudent@lin-ops:~/Desktop/Python$ touch testfile.txt
+>>> with open("testfile.txt", "w") as file1:
+...     file1.write("this is my string\n")
+... 
+18
+tudent@lin-ops:~/Desktop/Python$ cat testfile.txt 
+this is my string
+
+>>> mylist = ["first line\n", "second line\n", "third line\n"]
+>>> with open("testfile.txt", "w") as file1:
+...     file1.writelines(mylist)
+... 
+>>> 
+tudent@lin-ops:~/Desktop/Python$ cat testfile.txt 
+first line
+second line
+third line
+>>> with open("testfile.txt", "r") as file1:
+...     file1.read()
+... 
+'first line\nsecond line\nthird line\n'		string
+
+>>> with open("testfile.txt", "r") as file1:
+...     file1.readlines()					add len() before to get
+... 									#of lines
+['first line\n', 'second line\n', 'third line\n']		list
+>>> 
+
+RETURN LEN() OF FIRST LINE
+with open('myfile.txt') as f:
+    first_line = f.readline().strip('\n')
+x = len(firs lin)
+
+COPYING CONTENTS OF ONE FILE TO ANOTHER
+
+>>> with open("testfile.txt", "r") as file1, open("testfile2.txt", "w") as file2:
+...     file2.writelines(file1.readlines())
+
+student@lin-ops:~/Desktop/Python$ cat testfile.txt 
+first line
+second line
+third line
+student@lin-ops:~/Desktop/Python$ cat testfile2.txt
+first line
+second line
+third line
+
+TO READ ONLY A CERTAIN # OF BYTES
+>>> with open("testfile.txt", "r") as file1:
+...     file1.read(30)		specifies # of bytes
+... 
+'first line\nsecond line\nthird l'
+
+Counting # of characters
+with open("travel_plans.txt", "r") as file:
+    data = file.read()
+    num = len(data)
+
+COUNT # OF WORDS
+with open("emotion_words.txt", "r") as file:
+    data = str(file.read())
+    num_words = len(data.split())
+
+FIND FIRST 30 CHARACTERS
+with open("school_prompt.txt", "r") as file:
+    beginning_chars = file.read(30)
+
+ASSIGNING THIRD WORD EVERY LINE TO LIST
+with open("school_prompt.txt", "r") as file:
+    data = file.readlines()
+    three = []
+    for word in data:
+        duh = word.split()
+        three.append(duh[2])
+
+ADDING “P” WORDS TO A LIST
+with open("school_prompt.txt", "r") as file:
+    content = file.readlines()
+    p_words = []
+    for lines in content:
+        lines = lines.split()
+        for words in lines:
+            if "p" in words:
+                p_words.append(words)
+
+
+
+FINDING THE SMALLEST # IN AN ARRAY
+def find_smallest_int(arr):
+    x = arr[0] 
+    for i in arr:
+        if i < x:
+            x = i 
+        else:
+            pass
+    return x
+
+
+
+DAY 4
+								   K		V
+{} is a Dictionary - has a KEY  and a VALUE {‘Gloves’ :98.00}
+The variable that you name it as is returned as it’s TYPE
+>>>graphicscard[“TI 3090”]
+1300.0
+(lookes up the dictionary (graphicscard) item (TI 3090) and returns the VALUE
+
+print(“Item:{} Price:{}”.format(item, graphicscard[item]))
+
+THIS NEXT CODE COUNTS CHARACTERS IMPUTED 
+userlist = sorted(list(input("Please enter characters: ")))
+Mydict = {}
+for char in userlist:
+    if char in Mydict:
+        Mydict[char] += 1
+    else:
+        Mydict[char] = 1
+print(Mydict)
+
+
+
+INVERT ALL NUM FROM A LIST neg become pos, pos to neg
+def invert(lst):
+    neg = []
+    for num in lst:
+        neg.append(num*-1)
+    return neg
+
+
+Returns a tuple of the multiples of 10 from a to b inclusive.
+def make_tuple(a,b):
+    num = list(range((a + 9) // 10 * 10, b+1, 10))
+    return tuple(num)
+
+( or   a +(10 - a % 10), b+1, 10  for the range)
+
+tuple of the multiples of 10 from 1 to 100
+def make_tuple():
+    r = []
+    x = 1
+    while x < 11:
+        r.append(x*10)
+        x += 1
+
+    return tuple(r)
+
+
+tuple of the following two strings
+def strings():
+    word = ["", "Physics is the universe's operating system"]
+    return tuple(word)
+
+TURN ONE LIST INTO ONE TUPLE OF 2 LISTS
+def disect(lst):
+    half = len(lst)//2
+    lines = (lst[:half], lst[half:])
+    return lines
+RETURN A STRING REVERSED
+def reverse_string(strng):
+    line = strng[::-1]
+    return line
+
+from str with words sep by spaces, return new str reversed
+s = "i like this program very much"
+words = s.split(' ')
+string = []
+for word in words:
+string.insert(0, word)
+done = " ".join(string)
+return done
+much very program this like i
+
+
+RETURN A LIST OF ORDINALS FOR EACH CHARACTER IN A STRING
+def code_points(strng):
+   mylist = []
+   for char in strng:
+        x = ord(char)
+        mylist.append(x)
+   return mylist
+
+READ ONE FILE AND WRITE TO ANOTHER ADDING LINE NUMBERS 1: 
+def linenums(inpath, outpath):
+    with open(inpath, "r") as f1, open(outpath, "w") as f2:
+        num = 1
+        for line in f1.readlines():
+            numbered = ("{}: {}").format(num, line)
+            num += 1
+            f2.writelines(numbered)
+
+find the average to a list as a float
+s = sum (arg)
+l = len(arg)
+t = float(sum(arg)) / len(arg)
+
+
+return the result of multiplying the values together in order
+def grow(arr):
+    num = 1
+    for n in arr:
+        num *= n
+    return num
+  
+
+Return a new array with each value doubled
+def maps(a):
+    new = []
+    for n in a:
+        new.append(n*2)
+    return new
+
+HOW TO GET THE LAST n LINES IN A lst
+>>> a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+>>> new = a[-9:]
+[4, 5, 6, 7, 8, 9, 10, 11, 12]
+Return new
+
+
+
+
+
+IF ANY # IN A LIST ARE NEG RETURN + IF NOT FALSE
+def check_negative(vals):
+    if vals[0] < 0:
+        return False
+    else:
+        ...
+        return True
+
+
+(filename, lst) write word from lst to file until “no” present
+open the file to write to it
+for loop to iderate through the list
+if statement specifying if “no” .lower() is there
+break if it is
+else write to word to file +’\n’
+
+
+STRING SEPARATED BY ‘,’ RETURN LIST OF ELEMENTS NO ‘,’
+def ele(string):
+num = []
+x = string.split(“,”)
+for n in x:
+num.append(float(n))
+return num
+
+turn string into a tuple with each element a word from strng
+Def astring( str):
+wrd = the string with .split(“ “) on spaces
+t = [] create empty list
+for n in wrd:
+.append(n) to the empty list t
+return the list as tuple()
+
+
+given a dictionary and order list of 2 tuples return total val of order
+count = 0
+total = 0
+
+For x in order:
+	Total += catalog[order[count][0]] * order[count][1]
+	Count += 1
+Return total 
+
+
+
+
+
+return str of int separated by 3 with commas from long interger
+num = '{:,}'.format(value)
+return num
+
+ADD 2 LISTS TOGETHER AND SORT DECENDING ORDER
+def bob(lst0, lst1):
+both = lst0 + lst1
+return sorted(both, reverse = True)
+
+
+IDERATE THROUGH A LIST, RETURN FIRST DUPLICATE NUMBER
+def firstDuplicateSet(a):
+    seen = []
+    for i in a:
+        if i in seen:
+            return i
+        seen.append(i)
+         return i
+
+3 integer values a, b, c. The method should return true if a triangle can be built with the sides of given length and false in any other case
+def is_triangle(a, b, c):
+    if (a <= 0 or b <= 0 or c <= 0):
+        return False
+    elif (a+b > c and a+c > b and c+b > a):
+        return True
+    else:
+        return False
+
+ filters a list of strings and returns a list with only your friends name in it, only if friends name has 4 char.
+def friend(x): 
+new_friends = [] 
+for str in x: 
+if len(str) == 4: 
+new_friends.append(str) 
+return new_friends
+
+return the middle character of the word. If the word's length is odd, return the middle character. If length is even, return middle 2 characters
+def get_middle(s):
+   result = ""
+   middle = int(len(s)//2)
+        if len (s)% 2 == 0: 
+       result = "".join(s[(middle-1):(middle+1)])
+   else:
+       result = s[middle]
+   return results
+Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+def binary_array_to_number(arr):
+    num = int("".join(str(x) for x in arr), 2)
+    return num
+How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+def nb_year(p0, percent, aug, p):
+    years = 0
+    pop = p0
+    while pop < p:
+        pop = int(pop * (percent / 100 + 1) + aug)
+        years += 1
+    return years
